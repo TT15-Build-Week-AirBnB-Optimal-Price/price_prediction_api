@@ -48,14 +48,15 @@ async def viz(statecode: str):
                             detail=f'State code {statecode} not found')
 
     # Get the state's unemployment rate data from FRED
-    url = f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={statecode}UR'
-    df = pd.read_csv(url, parse_dates=['DATE'])
-    df.columns = ['Date', 'Percent']
+    # url = f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={statecode}UR'
+    # df = pd.read_csv(url, parse_dates=['DATE'])
+    # df.columns = ['Date', 'Percent']
 
     # Make Plotly figure
     statename = statecodes[statecode]
-    fig = px.line(df, x='Date', y='Percent',
-                  title=f'{statename} Unemployment Rate')
+    # fig = px.line(df, x='Date', y='Percent',
+    #               title=f'{statename} Unemployment Rate')
 
     # Return Plotly figure as JSON string
-    return fig.to_json()
+    return statename
+    # return fig.to_json()
