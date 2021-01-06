@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from app import db, prediction, viz
+from app.routes import db, prediction, viz
 
 description = """
 Edit your app's title and description. See [https://fastapi.tiangolo.com/
@@ -17,15 +17,16 @@ To use these interactive docs:
 """
 
 app = FastAPI(
-    title='DS API',
+    title='AirBnB Optimal Price Predictor',
     description=description,
     docs_url='/',
+    version='0.0.1',
 )
 
-app.include_router(db.router, tags=['Database'])
+# app.include_router(db.router, tags=['Database'])
 # app.include_router(ml.router, tags=['Machine Learning'])
-app.include_router(prediction.router, tags=['Price Prediction'])
-app.include_router(viz.router, tags=['Visualization'])
+# app.include_router(viz.router, tags=['Visualization'])
+app.include_router(prediction.router, tags=['Price-Prediction'])
 
 app.add_middleware(
     CORSMiddleware,
