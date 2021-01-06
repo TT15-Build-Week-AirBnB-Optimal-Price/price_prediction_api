@@ -29,7 +29,7 @@ class Item(BaseModel):
         return value
 
 
-@router.post('/predict')
+@router.post('/predict_ml')
 async def predict(item: Item):
     """
     Make random baseline predictions for classification problem 🔮
@@ -41,7 +41,7 @@ async def predict(item: Item):
 
     ### Response
     - `prediction`: boolean, at random
-    - `predict_proba`: float between 0.5 and 1.0, 
+    - `predict_proba`: float between 0.5 and 1.0,
     representing the predicted class's probability
 
     Replace the placeholder docstring and fake predictions with your own model.
