@@ -21,6 +21,8 @@ jupyter = "*"
 pandas-profiling = "*"
 category-encoders = "*"
 sklearn = "*"
+joblib = "*"
+
 
 [requires]
 python_version = "3"
