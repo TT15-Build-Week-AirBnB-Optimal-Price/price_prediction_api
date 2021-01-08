@@ -8,7 +8,7 @@ from app.schemas.listing import Listing
 from joblib import load
 
 log = logging.getLogger(__name__)
-pipeline = load("app\ml_models\best_model_v_01.sav")
+pipeline = load("app\ml_models\\best_model_v_01.sav")
 
 
 def predict_price(listing: Listing):
