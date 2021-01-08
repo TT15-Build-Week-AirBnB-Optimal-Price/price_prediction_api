@@ -8,7 +8,7 @@ from app.schemas.listing import Listing
 from joblib import load
 
 log = logging.getLogger(__name__)
-# pipeline = load("ml_models/pipeline.joblib")
+pipeline = load("app/ml_models/working_model.sav")
 
 
 def predict_price(listing: Listing):
@@ -17,8 +17,7 @@ def predict_price(listing: Listing):
     """
     X_new = listing.to_df()
     log.info(X_new)
-    y_pred = random.uniform(30.0, 150.99)
-
+    y_pred = pipeline.predict(X_new)
     return {
-        'prediction': y_pred
+        'prediction': y_pred[0]
     }

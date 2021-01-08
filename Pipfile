@@ -22,7 +22,7 @@ pandas-profiling = "*"
 category-encoders = "*"
 sklearn = "*"
 joblib = "*"
-
+datetime = "*"
 
 [requires]
 python_version = "3"
